@@ -1,3 +1,4 @@
+
 package lse;
 
 public class ListaSimplementeEnlazada {
@@ -11,8 +12,8 @@ public class ListaSimplementeEnlazada {
     }
     public void insertar(Object dato){
         if(estaVacia()){
-           Nodo nuevo = new Nodo(dato, null);
-        primero = nuevo;
+            Nodo nuevo = new Nodo(dato, null);
+            primero = nuevo;
         } else{
             Nodo nuevo = new Nodo(dato, primero);
             primero = nuevo;
