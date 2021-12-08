@@ -63,7 +63,25 @@ public class ListaCircularSimplementeEnlazada {
             Nodo ultimo = inicio;
             while (ultimo.getSiguiente()!=inicio){
                 System.out.print(ultimo.getDato()+ "    ");
+
+            ultimo = ultimo.getSiguiente();
             }
+            System.out.print(ultimo.getDato() + "   ");
+            System.out.println();
+        }
+    }
+
+    public void mostrarCircular(int vueltas){
+        if(!estaVacia()){
+            int contador = 0;
+            Nodo temp = inicio;
+            while (temp!= null && contador < (tamaño() * vueltas)){
+                System.out.print(temp.getDato()+ "    ");
+
+                temp = temp.getSiguiente();
+                contador++;
+            }
+            System.out.println();
         }
     }
 }
