@@ -1,4 +1,6 @@
 package lse;
+import jdk.swing.interop.SwingInterOpUtils;
+import lcde.ListaCircularDoblementeEnlazada;
 import lcse.ListaCircularSimplementeEnlazada;
 import lde.ListaDoblementeEnlazada;
 import lse.ListaSimplementeEnlazada;
@@ -21,10 +23,9 @@ public class Main {
         listaSimplementeEnlazada.eliminar();
         listaSimplementeEnlazada.eliminar();
         //mostramos nuestra lista
-        listaSimplementeEnlazada.mostrar();
-        */
+        listaSimplementeEnlazada.mostrar();*/
 
-        ListaDoblementeEnlazada listaDoblementeEnlazada = new ListaDoblementeEnlazada();
+      /*  ListaDoblementeEnlazada listaDoblementeEnlazada = new ListaDoblementeEnlazada();
         System.out.println(listaDoblementeEnlazada.estaVacia());
 
         for (int i = 20; i > 0; i--) {
@@ -40,7 +41,7 @@ public class Main {
 
 
 
-     /*   ListaCircularSimplementeEnlazada listaCircularSimplementeEnlazada =new ListaCircularSimplementeEnlazada();
+      ListaCircularSimplementeEnlazada listaCircularSimplementeEnlazada =new ListaCircularSimplementeEnlazada();
         System.out.println(listaCircularSimplementeEnlazada.estaVacia());
         System.out.println(listaCircularSimplementeEnlazada.tamaño());
         for (int i = 1; i <= 12 ; i++) {
@@ -53,6 +54,15 @@ public class Main {
         //listaCircularSimplementeEnlazada.mostrar();
    listaCircularSimplementeEnlazada.mostrarCircular(2);
 */
+
+
+        ListaCircularDoblementeEnlazada listaCircularDoblementeEnlazada = new ListaCircularDoblementeEnlazada();
+        System.out.println(listaCircularDoblementeEnlazada.estaVacia());
+        for (int i = 1; i <=5 ; i++) {
+            listaCircularDoblementeEnlazada.insertarFinal(i);
+
+        }
+        listaCircularDoblementeEnlazada.mostrar();
 
     }
 }
