@@ -16,7 +16,7 @@ public class ListaCircularDoblementeEnlazada {
 
     public void insertarFinal(Object dato) {
         if (estaVacia()) {
-            Nodo nuevo = new Nodo();
+            Nodo nuevo = new Nodo(null, dato, null);
             nuevo.setAnterior(nuevo);
             nuevo.setDato(dato);
             nuevo.setSiguiente(nuevo);
@@ -28,11 +28,13 @@ public class ListaCircularDoblementeEnlazada {
             ultimo = ultimo.getSiguiente();
 
         }
-        Nodo nuevo = new Nodo();
+        Nodo nuevo = new Nodo(null, dato, null);
         nuevo.setAnterior(ultimo);
         nuevo.setDato(dato);
         nuevo.setSiguiente(inicio);
-        ultimo.setSiguiente(nuevo);
+
+        
+        ultimo .setSiguiente(nuevo);
         inicio.setAnterior(nuevo);
     }
 

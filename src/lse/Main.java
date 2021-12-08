@@ -63,6 +63,9 @@ public class Main {
 
         }
         listaCircularDoblementeEnlazada.mostrar();
+        listaCircularDoblementeEnlazada.eliminarFinal();
+        listaCircularDoblementeEnlazada.eliminarFinal();
+        listaCircularDoblementeEnlazada.mostrar();
 
     }
 }
