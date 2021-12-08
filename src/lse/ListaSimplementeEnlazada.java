@@ -28,7 +28,7 @@ public class ListaSimplementeEnlazada {
     public void mostrar(){
         Nodo temporal = primero;
         while (temporal!= null){
-            System.out.println(temporal.getDato() + "  ");
+            System.out.print(temporal.getDato() + "  ");
             temporal = temporal.getSiguiente();
 
         }

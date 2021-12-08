@@ -46,7 +46,16 @@ public class ListaDoblementeEnlazada {
     }
     public  void mostrarAtras(){
         if(!estaVacia()){
-            
+            Nodo ultimo = inicio;
+            while (ultimo.getSiguiente()!=null){
+                ultimo = ultimo.getSiguiente();
+            }
+Nodo temp = ultimo;
+            while(temp != null){
+                System.out.println(temp.getDato()+ "   ");
+                temp = temp.getAnterior();
+            }
+            System.out.println();
         }
     }
 }
