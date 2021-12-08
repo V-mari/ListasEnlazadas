@@ -1,80 +1,81 @@
 package lcde;
 
 public class ListaCircularDoblementeEnlazada {
-    Nodo inicio;
-    Nodo ultimo;
-    Nodo temp;
-
+    private Nodo inicio;
     public ListaCircularDoblementeEnlazada() {
         inicio = null;
     }
 
     public boolean estaVacia() {
         return inicio == null;
+    }
+    public int tamaño() {
+        int contador = 0;
+        if (!estaVacia()){
+            Nodo ultimo = inicio;
+            while (ultimo.getSiguiente() != inicio) {
+                ultimo = ultimo.getSiguiente();
 
+                contador++;
+            }
+            contador++;
+
+        }
+        return contador;
     }
 
-    public void insertarFinal(Object dato) {
-        if (estaVacia()) {
-            Nodo nuevo = new Nodo(null, dato, null);
-            nuevo.setAnterior(nuevo);
+    public void insertarFin(Object dato) {
+        if (estaVacia()){
+            Nodo nuevo = new Nodo();
             nuevo.setDato(dato);
             nuevo.setSiguiente(nuevo);
 
             inicio = nuevo;
-        } else {
-            Nodo ultimo = inicio;
-            while (ultimo.getSiguiente() != inicio) ;
-            ultimo = ultimo.getSiguiente();
+        }else{
+            Nodo nuevo = new Nodo();
+            nuevo.setDato(dato);
+            nuevo.setSiguiente(inicio);
 
-        }
-        Nodo nuevo = new Nodo(null, dato, null);
-        nuevo.setAnterior(ultimo);
-        nuevo.setDato(dato);
-        nuevo.setSiguiente(inicio);
-
-        
-        ultimo .setSiguiente(nuevo);
-        inicio.setAnterior(nuevo);
-    }
-
-    public void eliminarFinal() {
-        if (!estaVacia()) {
             Nodo ultimo = inicio;
             while (ultimo.getSiguiente() != inicio) {
                 ultimo = ultimo.getSiguiente();
             }
-            Nodo penultimo = ultimo.getAnterior();
+            ultimo.setSiguiente(nuevo);
+
+
+
+        }
+    }
+
+    public void eliminarFin(){
+        if(!estaVacia()) {
+            Nodo penultimo = inicio;
+            while (penultimo.getSiguiente().getSiguiente() != inicio){
+                penultimo = penultimo.getSiguiente();
+            }
             penultimo.setSiguiente(inicio);
-            inicio.setAnterior(penultimo);
         }
     }
+    public void mostrarCircular(int vueltas){
+        if(!estaVacia()){
+            int contador = 0;
 
-    public void mostrar() {
-        if (!estaVacia()) {
             Nodo temp = inicio;
-            while (temp.getSiguiente() != inicio) ;
-            System.out.println(temp.getDato() + "   ");
-            temp = temp.getSiguiente();
-        }
-        System.out.println(temp.getDato());
+            while (temp != null &&  contador < (tamaño() * vueltas)) {
+                System.out.print(temp.getDato() + "   ");
 
-    }
+                temp = temp.getSiguiente();
 
-public void mostrarAdelante(int vueltas) {
-    if (!estaVacia()) {
-        Nodo temp = inicio;
-        int contador = 0;
-        while (contador < vueltas) {
-
-            if (temp.getAnterior() == inicio) {
                 contador++;
             }
-            System.out.println(temp.getDato() + "   ");
-            temp = temp.getAnterior();
 
+            System.out.println();
         }
-        System.out.println(temp.getDato());
     }
-}
+    public void mostrarAtras(int vueltas) {
+        for (int i = tamaño(); i >= 0;i--)
+        {
+            System.out.print(i+ "  ");
+        }
+    }
 }

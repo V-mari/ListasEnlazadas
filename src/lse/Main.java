@@ -55,17 +55,5 @@ public class Main {
    listaCircularSimplementeEnlazada.mostrarCircular(2);
 */
 
-
-        ListaCircularDoblementeEnlazada listaCircularDoblementeEnlazada = new ListaCircularDoblementeEnlazada();
-        System.out.println(listaCircularDoblementeEnlazada.estaVacia());
-        for (int i = 1; i <=5 ; i++) {
-            listaCircularDoblementeEnlazada.insertarFinal(i);
-
-        }
-        listaCircularDoblementeEnlazada.mostrar();
-        listaCircularDoblementeEnlazada.eliminarFinal();
-        listaCircularDoblementeEnlazada.eliminarFinal();
-        listaCircularDoblementeEnlazada.mostrar();
-
     }
 }
